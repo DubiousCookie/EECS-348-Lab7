@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root{
+--color:#000;
+}
+body {
+  background-color: rgb(255, 99, 71);
+}
+
+h1 {
+  color: var(--color);
+  text-align: center;
+  border-botton: 2px solid var(--color);
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  border-style:solid;
+  border-width: 0px;
+  color: var(--color)
+  
+}
+</style>
+<script>
+let colorPicker;
+let border;
+const defaultColor = "#000fff";
+const d = "0px";
+
+window.addEventListener("load", startup, false);
+
+function startup() {
+  colorPicker = document.querySelector("#color-picker");
+  colorPicker.value = defaultColor;
+  colorPicker.addEventListener("input", updateFirstc, false);
+  colorPicker.addEventListener("change", updateAllc, false);
+  colorPicker.select();
+  
+  border = document.querySelector("#b");
+  border.value = d;
+  border.addEventListener("input", updateFirstb, false);
+  border.addEventListener("change", updateAllb, false);
+  border.select();
+}
+
+function updateFirstc(event) {
+  const p = document.querySelector("p");
+  if (p) {
+    p.style.color = event.target.value;
+  }
+}
+
+function updateAllc(event) {
+  document.querySelectorAll("p").forEach((p) => {
+    p.style.color = event.target.value;
+  });
+  }
+  
+function updateFirstb(event){
+  const p = document.querySelector("p");
+  if (p) {
+    p.style.borderWidth = event.target.value;
+  }
+}
+
+function updateAllb(event){
+  document.querySelectorAll("p").forEach((p) => {
+    p.style.borderWidth = event.target.value;
+  });
+}
+</script>
+</head>
+<body>
+
+<h1>Practice 2</h1>
+<p>"Why hello there."</p>
+<label for="color-picker">Color:</label>
+<input type="text" value="0" id="color-picker" />
+
+<p></p>
+<label for="b">Border:</label>
+<input type="text" value="0px" id="b" />
+</body>
+</html>
+
+

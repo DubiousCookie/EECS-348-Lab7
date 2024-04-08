@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root{
+--color:#000;
+}
+body {
+  background-color: rgb(255, 99, 71);
+}
+
+h1 {
+  color: var(--color);
+  text-align: center;
+  border-botton: 2px solid var(--color);
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  border-style:solid;
+  border-width: 0px;
+  color: var(--color)
+  
+}
+</style>
+<script>
+function validate() {
+var newpass= document.getElementById("password");
+    var checkpass= document.getElementById("retype_password");
+if(newpass.value==checkpass.value) alert("Passwords are the same!")
+else alert("password not same");
+}
+</script>
+</head>
+<body>
+
+<h1>Practice 3</h1>
+password : <input type= "password" id="password" > <br><br>
+retype password : <input type="password" id="retype_password"  onblur="validate()"> <br><br>
+
+</body>
+</html>
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php echo $_SERVER["PHP_SELF"];?>
+<form method="post" action= "<?php echo $_SERVER["PHP_SELF"];?>">
+  Number: <input type="number" name="Number">
+  <input type="submit" name="submit" value="Submit Form">
+</form>
+<?php
+$array = array();
+$txt = "";
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+$txt = $_POST["Number"];
+for ($k =1;$k<=$txt;$k++){
+echo $k, " | ";
+}
+for ($j =1;$j<=$txt;$j++){
+echo "<br>";
+echo $j," | ";
+for ($i =1;$i<=$txt;$i++){
+$array[] = $i*$j;
+echo $i*$j, " | ";
+}
+}
+}
+?>
+
+</body>
+</html>
+
+
